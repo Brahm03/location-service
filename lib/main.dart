@@ -13,8 +13,23 @@ void main() {
   ], child: const MyWeatherApp()));
 }
 
-class MyWeatherApp extends StatelessWidget {
+class MyWeatherApp extends StatefulWidget {
   const MyWeatherApp({super.key});
+
+  @override
+  State<MyWeatherApp> createState() => _MyWeatherAppState();
+}
+
+class _MyWeatherAppState extends State<MyWeatherApp> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    LocationService.getCurrentUserLocation().then((value) {
+      // ignore: use_build_context_synchronously
+      Provider.of<MainProvider>(context, listen: false).getWeather('Tashkent');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

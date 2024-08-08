@@ -3,9 +3,9 @@ import 'package:weather_app/core/models/weather_api_model.dart';
 import 'package:weather_app/core/repasitory/weather_repasitory.dart';
 
 class MainProvider extends ChangeNotifier{
-  MainProvider(){
-    getWeather("Toshkent");
-  }
+  // MainProvider(){
+  //   getWeather("Toshkent");
+  // }
 
   WeatherModel? model;
 

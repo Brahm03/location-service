@@ -1,10 +1,12 @@
 import 'package:location/location.dart';
 
 class LocationService {
+  static late final double latitude;
+  static late final double longitude;
+
   static Future<void> getCurrentUserLocation() async {
     Location location = Location();
 
-    bool _serviceEnabled;
     PermissionStatus _permissionGranted;
     LocationData _locationData;
 
@@ -19,8 +21,9 @@ class LocationService {
       }
     }
 
-    print('permission dan oldin');
     _locationData = await location.getLocation();
-    print('location ${_locationData.longitude}');
+    print('after location got');
+    latitude = _locationData.latitude!;
+    longitude = _locationData.longitude!;
   }
 }

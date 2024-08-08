@@ -28,8 +28,6 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    LocationService.getCurrentUserLocation();
-
     tabController = PageController(
       initialPage: 3,
     );
